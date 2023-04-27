@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "include/reader.hpp"
 #include <fstream>
+#include <algorithm>
 
 using std::vector;
 using std::endl;
@@ -52,6 +53,10 @@ TEST_F(ReaderTest, FindImageFiles) {
     };
 
     vector<fs::path> image_paths = Reader::find_image_files(ReaderTest::DIST_DIR);
+
+    // sort vectors 
+    std::sort(expected_image_paths.begin(), expected_image_paths.end());
+    std::sort(image_paths.begin(), image_paths.end());
 
     ASSERT_EQ(expected_image_paths.size(), image_paths.size());
     for (int i = 0; i < expected_image_paths.size(); i++) {
