@@ -2,9 +2,9 @@ name: CMake
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -18,23 +18,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Install dependencies
-      run: sudo apt update && sudo apt install -y cmake libgtest-dev build-essential 
+      - name: Install dependencies
+        run: sudo apt update && sudo apt install -y cmake libgtest-dev build-essential libvips libvips-dev libvips-tools
 
-    - name: Run Build Script
-      run: |
-        chmod +x build.sh
-        ./build.sh
+      - name: Run Build Script
+        run: |
+          chmod +x build.sh
+          ./build.sh
 
-    - name: Run Configure Script
-      run: |
-        chmod +x configure.sh
-        ./configure.sh
+      - name: Run Configure Script
+        run: |
+          chmod +x configure.sh
+          ./configure.sh
 
-    - name: Run Test
-      run: |
-        chmod +x test.sh
-        ./test.sh
-
+      - name: Run Test
+        run: |
+          chmod +x test.sh
+          ./test.sh
