@@ -2,8 +2,11 @@
 #-----------------
 # Vscode
 .vscode
-# Neovim(ccls lsp)
+# Neovim(ccls lsp or clang lsp)
 .ccls-cache
+.cache
+clangd
+index
 # intellij idea
 .idea
 
@@ -62,4 +65,4 @@ _deps
 # Build
 #-----------
 [Bb][Uu][iI][Ll][Dd]
-
+[oO]utput
