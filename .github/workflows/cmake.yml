@@ -23,15 +23,15 @@ jobs:
       - name: Install dependencies
         run: sudo apt update && sudo apt install -y cmake libgtest-dev build-essential libopencv-dev
 
-      - name: Run Build Script
-        run: |
-          chmod +x build.sh
-          ./build.sh
-
       - name: Run Configure Script
         run: |
           chmod +x configure.sh
           ./configure.sh
+
+      - name: Run Build Script
+        run: |
+          chmod +x build.sh
+          ./build.sh
 
       - name: Run Test
         run: |
